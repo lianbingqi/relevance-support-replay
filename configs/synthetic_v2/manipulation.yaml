@@ -1,0 +1,35 @@
+environment:
+  rho: 0.85
+  beta: 0.12
+  noise_std: 0.01
+  init_position_range: 1.0
+  init_velocity_range: 0.10
+  max_episode_steps: 200
+  safety_radius: 25.0
+  safety_speed: 10.0
+
+contexts:
+  A: {rotation_deg: 0.0}
+  B: {rotation_deg: 90.0}
+  D: {rotation_deg: 180.0}
+
+stationary:
+  train_seeds: [1, 2, 3, 4, 5]
+  training_episodes: 300
+  eval_episodes: 30
+  random_baseline_episodes: 100
+  max_workers: 2
+  early_window: 50
+  late_window: 50
+  smoothing_window: 20
+
+manipulation:
+  probe_seed: 424242
+  probe_states: 4096
+  probe_position_range: 1.5
+  probe_velocity_range: 0.5
+
+criteria:
+  max_off_context_retention: 0.80
+  min_pairwise_action_disagreement: 0.25
+  require_diagonal_dominance: true

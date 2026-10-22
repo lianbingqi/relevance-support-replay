@@ -1,0 +1,32 @@
+{
+  "code_commit": "ff3c8394ef9a408e168ba40987ac724c6fe2a9e8",
+  "contexts": {
+    "A": {
+      "rotation_deg": 0.0
+    },
+    "B": {
+      "rotation_deg": 90.0
+    },
+    "D": {
+      "rotation_deg": 180.0
+    }
+  },
+  "train_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "criteria": {
+    "max_off_context_retention": 0.8,
+    "min_pairwise_action_disagreement": 0.25,
+    "require_diagonal_dominance": true
+  },
+  "all_diagonal_dominance_pass": true,
+  "all_retention_pass": true,
+  "all_pairwise_action_disagreement_pass": true,
+  "manipulation_pass": true,
+  "context_angles_frozen": true,
+  "next_step_if_pass": "v2_03_oracle_recurrence"
+}
