@@ -1,5 +1,15 @@
 environment:
   family: synthetic
   schedule: stationary
+  context_name: A
+  max_episode_steps: 200
+  noise_std: 0.01
+  init_x_range: 1.25
+  init_v_range: 0.10
+  x_limit: 4.0
+  v_limit: 3.0
+
 contexts:
-  sequence: [A, A]
+  A:
+    rho: 0.85
+    beta: 0.18

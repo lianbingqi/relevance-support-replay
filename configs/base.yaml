@@ -7,17 +7,19 @@ agent:
   learning_rate: 0.0003
   batch_size: 64
   target_update_steps: 1000
-
-encoder:
-  type: gru
-  hidden_size: 32
-  history_length: 10
+  hidden_sizes: [128, 128]
+  grad_clip_norm: 10.0
 
 replay:
+  type: uniform
   capacity: 50000
-  k_neighbors: 32
-  candidate_pool_size: 1024
 
 experiment:
-  total_steps: 100000
+  episodes: 300
+  learning_starts: 1000
+  train_frequency: 4
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 20000
+  eval_episodes: 30
   seeds: [1, 2, 3, 4, 5]
