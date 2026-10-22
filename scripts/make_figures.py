@@ -1,0 +1,1 @@
+"""Evaluation entry point."""\n\ndef main():\n    raise NotImplementedError("Implement evaluation pipeline.")\n\nif __name__ == "__main__":\n    main()\n
