@@ -1,14 +1,18 @@
 {
   "seed": 1,
   "device": "cpu",
-  "git_commit": "ce1fc5961c4e41b9e24d8cf81a0ac1bb1df5edad",
+  "code_commit": "0e9c7a6fbcb1ae9ea086f06b8b7030402bacaa86",
   "episodes": 300,
   "total_steps": 49141,
   "early_train_return_mean": -174.12018148106878,
-  "late_train_return_mean": -4.419650114308406,
-  "return_improvement": 169.70053136676037,
-  "eval_return_mean": -2.8604208632533736,
-  "eval_return_std": 0.6805238002242416,
+  "late_train_return_mean": -4.893907677096881,
+  "late_train_return_std": 1.4929375386480759,
+  "return_improvement": 169.2262738039719,
+  "late_full_length_fraction": 1.0,
+  "late_termination_fraction": 0.0,
+  "late_truncation_fraction": 1.0,
+  "eval_return_mean": -4.729717015735235,
+  "eval_return_std": 0.5952929888666113,
   "eval_episodes": 30,
   "sanity_pass": true
 }
