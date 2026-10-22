@@ -1,36 +1,52 @@
 # Experimental Protocol
 
-## Phase 0: stationary sanity check
-Verify that Double DQN with uniform replay learns the stationary synthetic task.
+## Synthetic v2: hidden rotated actuator
 
-## Phase 1: context calibration
-Train/evaluate stationary policies over candidate contexts and estimate the cross-context transfer matrix `T_ij = J(pi_i ; c_j)`. Freeze A/B/D after calibration.
+The synthetic benchmark is a 2D control task with hidden actuator rotation.
 
-## Phase 2: oracle recurrence
-Run `A -> B -> A` with Uniform, Recent, and Oracle Relevant replay. Primary diagnostic: recovery time after returning to A.
+The observable state contains position and velocity. The reward, goal, action labels, and agent architecture remain fixed across contexts. Only the hidden transition mechanism changes.
 
-**Go/no-go question:** does oracle historical relevance improve recovery relative to recent replay?
+Contexts are fixed before experiments:
 
-## Phase 3: novelty
-Run `A -> B -> D` and test behavior when historical support is weak.
+- A: 0° actuator rotation
+- B: 90° actuator rotation
+- D: 180° actuator rotation
 
-## Phase 4: GRU context representation
-Evaluate retrieval Precision@k and context separability before using the representation for replay.
+The context label and rotation angle are never included in the agent observation.
 
-## Phase 5: learned relevance replay
-Compare learned relevance with oracle relevance.
+## Phase 1: stationary sanity
+Train the same DDQN independently in A, B, and D. All three contexts must be stably learnable.
 
-## Phase 6: historical support
-Test whether support distinguishes recurring/covered contexts from novel contexts.
+## Phase 2: manipulation check
+Cross-evaluate stationary policies across A, B, and D. Confirm clear cross-context performance degradation and shared-state action disagreement. A, B, and D are not tuned using these results.
 
-## Phase 7: support-aware replay
-Mix relevant historical and recent experience as a function of support.
+## Phase 3: oracle recurrence
+Run `A -> B -> A` with Uniform, Recent, and Oracle Relevant replay.
 
-## Phase 8: full synthetic benchmark
-Methods: Uniform, Recent, PER, Learned Relevant, Oracle Relevant, Support-Aware.\nSchedules: `A -> A`, `A -> B -> A`, `A -> B -> D`.
+Do not reset the network, optimizer, exploration schedule, or replay memory at context switches.
 
-## Phase 9: CARL replication
-Calibrate CARL contexts, then repeat recurrence and novelty experiments in CARL CartPole.
+Primary go/no-go question: does oracle access to historically relevant A experience improve recovery after returning to A relative to Recent replay?
+
+## Phase 4: oracle novelty sanity
+Run `A -> B -> D` to verify that historical reuse is not automatically beneficial when no historical exact context match exists.
+
+## Phase 5: latent context representation
+Add a history encoder and test whether recent transition history yields a useful representation of hidden dynamics.
+
+## Phase 6: learned relevance
+Use latent-context similarity to retrieve historically relevant experience and compare against Oracle Relevant.
+
+## Phase 7: historical support
+Measure whether the current latent context is well supported by historical experience.
+
+## Phase 8: support-aware replay
+Adapt the historical/recent replay mixture as a function of historical support.
+
+## Phase 9: full synthetic benchmark
+Compare Uniform, Recent, PER, Learned Relevant, Oracle Relevant, and Support-Aware replay.
+
+## Phase 10: CARL replication
+Port recurrence and novelty experiments to CARL CartPole after the synthetic mechanism is validated.
 
 ## Reproducibility rule
-Every formal run records the configuration, seed, Git commit SHA, context schedule, replay method, and summary metrics. Any design change made after inspecting main results must be recorded in `docs/experiment_log.md`.
+Formal runs record configuration, seed, Git commit SHA, context schedule, replay method, and summary metrics.

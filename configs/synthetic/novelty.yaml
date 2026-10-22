@@ -1,5 +1,0 @@
-environment:
-  family: synthetic
-  schedule: novelty
-contexts:
-  sequence: [A, B, D]
