@@ -1,0 +1,39 @@
+reference_context: A
+
+calibration:
+  train_seeds: [1, 2, 3]
+  training_episodes: 300
+  eval_episodes_per_policy: 30
+  random_baseline_episodes: 100
+  max_workers: 2
+
+policy_grid:
+  x_min: -1.5
+  x_max: 1.5
+  x_points: 25
+  v_min: -0.6
+  v_max: 0.6
+  v_points: 25
+
+selection_screen:
+  min_late_train_full_length_fraction: 0.90
+  min_self_eval_full_length_fraction: 0.95
+  min_raw_transfer_penalty: 2.0
+  min_action_disagreement_from_A: 0.15
+
+environment:
+  max_episode_steps: 200
+  noise_std: 0.01
+  init_x_range: 1.25
+  init_v_range: 0.10
+  x_limit: 4.0
+  v_limit: 3.0
+
+contexts:
+  Dm07: {rho: 0.85, beta: 0.18, drift: -0.07}
+  Dm06: {rho: 0.85, beta: 0.18, drift: -0.06}
+  Dm05: {rho: 0.85, beta: 0.18, drift: -0.05}
+  A:    {rho: 0.85, beta: 0.18, drift:  0.00}
+  Dp05: {rho: 0.85, beta: 0.18, drift:  0.05}
+  Dp06: {rho: 0.85, beta: 0.18, drift:  0.06}
+  Dp07: {rho: 0.85, beta: 0.18, drift:  0.07}
