@@ -1,0 +1,23 @@
+project:
+  name: relevance-support-replay
+
+agent:
+  algorithm: ddqn
+  gamma: 0.99
+  learning_rate: 0.0003
+  batch_size: 64
+  target_update_steps: 1000
+
+encoder:
+  type: gru
+  hidden_size: 32
+  history_length: 10
+
+replay:
+  capacity: 50000
+  k_neighbors: 32
+  candidate_pool_size: 1024
+
+experiment:
+  total_steps: 100000
+  seeds: [1, 2, 3, 4, 5]
