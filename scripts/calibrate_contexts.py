@@ -1,0 +1,1 @@
+"""Context-calibration entry point."""\n\ndef main():\n    raise NotImplementedError("Implement cross-context calibration.")\n\nif __name__ == "__main__":\n    main()\n
