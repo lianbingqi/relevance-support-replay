@@ -1,0 +1,4 @@
+context,rotation_deg,early_train_return_mean,late_train_return_mean,late_train_return_sd,eval_return_mean,eval_return_sd_across_seeds,eval_full_length_fraction,eval_safety_termination_fraction,random_return_mean,random_safety_termination_fraction,beats_random,training_improves,zero_eval_safety_terminations,sanity_pass
+A,0.0,-8185.636515234365,-22.25066747583379,21.17504480395915,-25.28638262512036,25.02276480108986,1.0,0.0,-10541.240814885281,0.0,True,True,True,True
+B,90.0,-5957.614673001662,-28.389192319289307,17.67842786529608,-28.13863579490747,29.555945512868384,1.0,0.0,-10168.725639024386,0.0,True,True,True,True
+D,180.0,-8483.585933671564,-33.78670020708814,25.540732669795855,-49.929501747487826,33.08091675911517,1.0,0.0,-9982.61560684647,0.0,True,True,True,True

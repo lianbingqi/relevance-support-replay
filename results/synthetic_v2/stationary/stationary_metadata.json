@@ -1,0 +1,23 @@
+{
+  "code_commit": "c72db9fe28cb11d6780908f2ecd614d622ffe8be",
+  "contexts": {
+    "A": {
+      "rotation_deg": 0.0
+    },
+    "B": {
+      "rotation_deg": 90.0
+    },
+    "D": {
+      "rotation_deg": 180.0
+    }
+  },
+  "train_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "all_contexts_pass": true,
+  "next_step_if_pass": "v2_02_context_manipulation_check"
+}
