@@ -1,0 +1,5 @@
+environment:
+  family: synthetic
+  schedule: stationary
+contexts:
+  sequence: [A, A]
