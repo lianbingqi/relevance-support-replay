@@ -1,0 +1,18 @@
+{
+  "seed": 2,
+  "device": "cpu",
+  "code_commit": "0e9c7a6fbcb1ae9ea086f06b8b7030402bacaa86",
+  "episodes": 300,
+  "total_steps": 50026,
+  "early_train_return_mean": -228.27916266655572,
+  "late_train_return_mean": -4.6911926702789595,
+  "late_train_return_std": 1.6815325327583717,
+  "return_improvement": 223.58796999627677,
+  "late_full_length_fraction": 1.0,
+  "late_termination_fraction": 0.0,
+  "late_truncation_fraction": 1.0,
+  "eval_return_mean": -5.02029602003765,
+  "eval_return_std": 0.7291833557130843,
+  "eval_episodes": 30,
+  "sanity_pass": true
+}
