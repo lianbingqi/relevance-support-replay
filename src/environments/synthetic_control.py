@@ -1,18 +1,27 @@
 from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import Dict, Mapping, Optional
+
 import gymnasium as gym
 import numpy as np
 from gymnasium import spaces
+
 
 @dataclass(frozen=True)
 class ContextParams:
     rho: float
     beta: float
+    drift: float = 0.0
 
     @classmethod
     def from_mapping(cls, values: Mapping[str, float]) -> "ContextParams":
-        return cls(rho=float(values["rho"]), beta=float(values["beta"]))
+        return cls(
+            rho=float(values["rho"]),
+            beta=float(values["beta"]),
+            drift=float(values.get("drift", 0.0)),
+        )
+
 
 class HiddenContextControlEnv(gym.Env):
     metadata = {"render_modes": []}
@@ -31,12 +40,15 @@ class HiddenContextControlEnv(gym.Env):
         super().__init__()
         if not contexts:
             raise ValueError("At least one context must be provided.")
+
         self.contexts: Dict[str, ContextParams] = {
             name: ContextParams.from_mapping(params)
             for name, params in contexts.items()
         }
+
         if context_name not in self.contexts:
             raise KeyError(f"Unknown context: {context_name}")
+
         self.context_name = context_name
         self.max_episode_steps = int(max_episode_steps)
         self.noise_std = float(noise_std)
@@ -51,6 +63,7 @@ class HiddenContextControlEnv(gym.Env):
             high=np.array([np.inf, np.inf], dtype=np.float32),
             dtype=np.float32,
         )
+
         self.state = np.zeros(2, dtype=np.float32)
         self.steps = 0
 
@@ -65,7 +78,7 @@ class HiddenContextControlEnv(gym.Env):
 
     def context_vector(self) -> np.ndarray:
         c = self.context
-        return np.asarray([c.rho, c.beta], dtype=np.float32)
+        return np.asarray([c.rho, c.beta, c.drift], dtype=np.float32)
 
     def _info(self) -> dict:
         return {
@@ -88,8 +101,9 @@ class HiddenContextControlEnv(gym.Env):
         u = float(action - 1)
         x, v = map(float, self.state)
         c = self.context
+
         noise = float(self.np_random.normal(0.0, self.noise_std))
-        v_next = c.rho * v + c.beta * u + noise
+        v_next = c.rho * v + c.beta * u + c.drift + noise
         x_next = x + v_next
 
         self.state = np.asarray([x_next, v_next], dtype=np.float32)
