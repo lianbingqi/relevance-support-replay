@@ -1,0 +1,6 @@
+environment:
+  family: carl_cartpole
+  schedule: recurrence
+  hide_context: true
+contexts:
+  sequence: [A, B, A]
