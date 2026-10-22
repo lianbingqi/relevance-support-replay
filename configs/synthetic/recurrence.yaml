@@ -1,0 +1,5 @@
+environment:
+  family: synthetic
+  schedule: recurrence
+contexts:
+  sequence: [A, B, A]
