@@ -1,0 +1,6 @@
+environment:
+  family: carl_cartpole
+  schedule: stationary
+  hide_context: true
+contexts:
+  sequence: [A, A]
