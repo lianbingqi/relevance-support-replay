@@ -1,0 +1,63 @@
+project:
+  name: relevance-support-replay
+agent:
+  algorithm: ddqn
+  gamma: 0.99
+  learning_rate: 0.0003
+  batch_size: 64
+  target_update_steps: 1000
+  hidden_sizes:
+  - 128
+  - 128
+  grad_clip_norm: 10.0
+replay:
+  type: uniform
+  capacity: 50000
+experiment:
+  episodes: 300
+  learning_starts: 1000
+  train_frequency: 4
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 20000
+  eval_episodes: 30
+  seeds:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+environment:
+  rho: 0.85
+  beta: 0.12
+  noise_std: 0.01
+  init_position_range: 1.0
+  init_velocity_range: 0.1
+  max_episode_steps: 200
+  safety_radius: 25.0
+  safety_speed: 10.0
+contexts:
+  A:
+    rotation_deg: 0.0
+  B:
+    rotation_deg: 90.0
+  D:
+    rotation_deg: 180.0
+stationary:
+  train_seeds:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  training_episodes: 300
+  eval_episodes: 30
+  random_baseline_episodes: 100
+  max_workers: 2
+  early_window: 50
+  late_window: 50
+  smoothing_window: 20
+sanity:
+  require_zero_eval_safety_terminations: true
+  require_eval_better_than_random: true
+  require_late_training_improvement: true
