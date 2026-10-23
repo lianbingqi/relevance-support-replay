@@ -1,0 +1,15 @@
+{
+  "code_commit": "f495517cb0e73c67008f8dd178b0e6bd66ffb47c",
+  "seed": 1,
+  "A1_reference_return": -20.6227609643115,
+  "B_final_return": -12.601011936583033,
+  "random_A": -8626.885351246803,
+  "fork_zero_shot_return": -12886.536364787413,
+  "recovery_improvement_steps": 1200.0,
+  "AUC_0_2000_advantage": 1.1675540160589268,
+  "recovery_screen_pass": true,
+  "auc_screen_pass": true,
+  "diagnostic_supports_expansion": true,
+  "next_if_supported": "run paired seeds 2 and 3 with this frozen fork-at-return protocol",
+  "next_if_not_supported": "do not add GRU yet; reconsider replay hypothesis or objective"
+}
