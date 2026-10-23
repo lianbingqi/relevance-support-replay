@@ -1,0 +1,11 @@
+{
+  "code_commit": "fa340fd3eefdcdc38569dc4015158aa98e036177",
+  "pilot_seed": 1,
+  "recovery_improvement_steps": 0.0,
+  "early_A2_score_advantage": -0.7490472263566652,
+  "recovery_screen_pass": false,
+  "early_score_screen_pass": false,
+  "pilot_pass": false,
+  "decision_if_pass": "run seeds 2 and 3 using the same frozen protocol",
+  "decision_if_fail": "diagnose mechanism before running more seeds"
+}

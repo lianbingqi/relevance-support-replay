@@ -1,0 +1,10 @@
+method,seed,phase,context,global_step_end,updates,replay_size,replay_A_count,replay_B_count,mean_sample_current_context_fraction,mean_oracle_historical_relevant_fraction
+recent,1,A1,A,20000,4750,20000,20000,0,1.0,
+recent,1,B,B,40000,5000,40000,20000,20000,0.87460625,
+recent,1,A2,A,50000,2500,50000,30000,20000,0.74973125,
+uniform,1,A1,A,20000,4750,20000,20000,0,1.0,
+uniform,1,B,B,40000,5000,40000,20000,20000,0.306328125,
+uniform,1,A2,A,50000,2500,50000,30000,20000,0.5549,
+oracle,1,A1,A,20000,4750,20000,20000,0,1.0,0.628
+oracle,1,B,B,40000,5000,40000,20000,20000,0.99835,0.5966
+oracle,1,A2,A,50000,2500,50000,30000,20000,1.0,0.797025
