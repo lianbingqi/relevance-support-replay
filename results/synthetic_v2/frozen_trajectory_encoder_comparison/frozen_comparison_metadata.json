@@ -1,0 +1,19 @@
+{
+  "code_commit": "cd92744ff57adcc08c4e83e49c03e0d8bc903161",
+  "trajectory_array_bundle_sha256": "9837617ddc5a206edcd1f0c709d496e9c1de100987e5df343aec170c47d7c2b4",
+  "trajectory_npz_sha256": "96b07fab6dbed7f4217fc13046846c6543d840d9026d28c1daba42567ca9e1bf",
+  "trajectory_repeat_generation_verified_exact": true,
+  "same_frozen_bank_for_both_encoders": true,
+  "same_frozen_queries_for_both_encoders": true,
+  "balanced_bank_history_sha256": "0f2ec75db736797b8eecea3bcff6eeb1c003b5bc5e34b3fd24af24ea883b6cfc",
+  "A2_query_history_sha256": "04851a9f968d7ce24c6e2e4dfcf528e089f11610bbcd183cb2cb6bf695e77145",
+  "n_balanced_bank_windows": 8000,
+  "n_A2_queries": 484,
+  "criteria": {
+    "min_early_precision_at_10": 0.9,
+    "min_first2k_precision_at_10": 0.9
+  },
+  "05b_formal_pass": false,
+  "05c_formal_pass": false,
+  "purpose": "evaluation-control cleanup on bitwise-identical corrected RL experience"
+}
