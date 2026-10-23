@@ -1,0 +1,13 @@
+{
+  "code_commit": "fcd05a29aa5778887fee1a45e9b4e35ab7680291",
+  "pilot_seed": 1,
+  "heldout_replication_seeds": [
+    2,
+    3
+  ],
+  "protocol_frozen_from_seed1": true,
+  "heldout_positive_recovery_seeds": 2,
+  "heldout_positive_AUC_seeds": 2,
+  "all_3seed_mean_recovery_improvement_steps": 1083.3333333333333,
+  "all_3seed_mean_AUC_0_2000_advantage": 0.7347833342021098
+}
