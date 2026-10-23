@@ -1,0 +1,2 @@
+history_feature,history_input_dim,n_bank_windows,bank_A_fraction,n_A2_queries,offline_history_test_mse,offline_no_history_test_mse,offline_relative_mse_improvement,offline_AB_precision_at_10,offline_AB_centroid_accuracy,early_A2_precision_at_10,first2k_precision_at_10,first2k_precision_at_50,early_same_vs_other_margin,early_pass,first2k_pass,pilot_pass
+action_delta_only,9,8000,0.5,488,0.0001238465920323506,0.0030382382683455944,0.9592373668244958,1.0,1.0,0.4487999975681305,0.7588115334510803,0.7400000095367432,0.028790878131985664,False,False,False
