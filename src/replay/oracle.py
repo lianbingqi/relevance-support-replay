@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import numpy as np
-
 from src.replay.base_buffer import ReplayBatch
 from src.replay.uniform import UniformReplayBuffer
 
@@ -27,12 +26,16 @@ class OracleRelevantReplayBuffer(UniformReplayBuffer):
         seed: int = 0,
     ):
         super().__init__(capacity=capacity, seed=seed)
+        if recent_window <= 0:
+            raise ValueError("recent_window must be positive")
+        if not 0.0 <= historical_fraction <= 1.0:
+            raise ValueError("historical_fraction must be in [0, 1]")
         self.recent_window = int(recent_window)
         self.historical_fraction = float(historical_fraction)
         self.current_context = None
         self.last_sample_stats = {}
 
-    def set_current_context(self, context_id: str):
+    def set_current_context(self, context_id: str) -> None:
         self.current_context = context_id
 
     def sample(self, batch_size: int) -> ReplayBatch:
@@ -45,26 +48,25 @@ class OracleRelevantReplayBuffer(UniformReplayBuffer):
 
         recent_start = max(0, n - self.recent_window)
 
-        hist_relevant = [
+        historical_relevant = [
             i for i in range(recent_start)
             if self.buffer[i].context_id == self.current_context
         ]
-        recent_relevant = [
-            i for i in range(recent_start, n)
-            if self.buffer[i].context_id == self.current_context
-        ]
+        recent_all = list(range(recent_start, n))
 
-        hist_target = int(round(batch_size * self.historical_fraction))
-        recent_target = batch_size - hist_target
+        n_hist_target = int(round(batch_size * self.historical_fraction))
+        n_recent_target = batch_size - n_hist_target
 
         selected = []
         selected_set = set()
 
         def take(pool, count):
-            available = [i for i in pool if i not in selected_set]
-            if count <= 0 or not available:
+            if count <= 0:
                 return
-            k = min(count, len(available))
+            available = [i for i in pool if i not in selected_set]
+            if not available:
+                return
+            k = min(int(count), len(available))
             chosen = self.rng.choice(
                 np.asarray(available, dtype=np.int64),
                 size=k,
@@ -74,32 +76,39 @@ class OracleRelevantReplayBuffer(UniformReplayBuffer):
                 selected.append(int(i))
                 selected_set.add(int(i))
 
-        take(hist_relevant, hist_target)
-        take(recent_relevant, recent_target)
-        take(hist_relevant + recent_relevant, batch_size - len(selected))
-        take(list(range(recent_start, n)), batch_size - len(selected))
-        take(list(range(n)), batch_size - len(selected))
+        take(historical_relevant, n_hist_target)
+        take(recent_all, n_recent_target)
+
+        if len(selected) < batch_size:
+            take(recent_all, batch_size - len(selected))
+
+        if len(selected) < batch_size:
+            take(list(range(n)), batch_size - len(selected))
 
         if len(selected) != batch_size:
-            raise RuntimeError("Could not assemble a full Oracle batch")
+            raise RuntimeError("Oracle sampler could not build a full batch")
 
         selected = self.rng.permutation(
             np.asarray(selected, dtype=np.int64)
         ).tolist()
 
-        current_count = sum(
-            self.buffer[i].context_id == self.current_context
-            for i in selected
-        )
-        hist_count = sum(
-            i < recent_start
-            and self.buffer[i].context_id == self.current_context
-            for i in selected
-        )
-
         self.last_sample_stats = {
-            "current_context_fraction": current_count / batch_size,
-            "historical_relevant_fraction": hist_count / batch_size,
+            "historical_relevant_fraction": float(
+                sum(
+                    i < recent_start
+                    and self.buffer[i].context_id == self.current_context
+                    for i in selected
+                ) / batch_size
+            ),
+            "recent_fraction": float(
+                sum(i >= recent_start for i in selected) / batch_size
+            ),
+            "current_context_fraction": float(
+                sum(
+                    self.buffer[i].context_id == self.current_context
+                    for i in selected
+                ) / batch_size
+            ),
         }
 
         return _to_batch([self.buffer[int(i)] for i in selected])

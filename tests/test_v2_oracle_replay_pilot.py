@@ -7,32 +7,68 @@ from src.replay.recent import RecentReplayBuffer
 def add(buf, i, context):
     s = np.asarray([float(i), 0, 0, 0], dtype=np.float32)
     buf.add(
-        s, i % 5, -1.0, s + 0.01, False,
+        s,
+        i % 5,
+        -1.0,
+        s + 0.01,
+        False,
         context_id=context,
         context_vector=np.asarray([0.0, 0.0], dtype=np.float32),
     )
 
 
 def test_recent_uses_only_recent_window():
-    buf = RecentReplayBuffer(100, recent_window=10, seed=1)
+    buf = RecentReplayBuffer(
+        100,
+        recent_window=10,
+        seed=1,
+    )
+
     for i in range(30):
         add(buf, i, "A")
+
     for i in range(30, 60):
         add(buf, i, "B")
+
     batch = buf.sample(8)
+
     assert all(c == "B" for c in batch.context_ids)
     assert np.all(batch.states[:, 0] >= 50)
 
 
-def test_oracle_can_retrieve_old_A():
+def test_oracle_uses_historical_A_plus_recent_B():
     buf = OracleRelevantReplayBuffer(
-        100, recent_window=10, historical_fraction=0.80, seed=2
+        100,
+        recent_window=10,
+        historical_fraction=0.80,
+        seed=2,
     )
+
     for i in range(30):
         add(buf, i, "A")
+
     for i in range(30, 60):
         add(buf, i, "B")
+
     buf.set_current_context("A")
+
     batch = buf.sample(20)
-    assert all(c == "A" for c in batch.context_ids)
-    assert buf.last_sample_stats["current_context_fraction"] == 1.0
+
+    # 80% historical relevant A + 20% generic recent B
+    assert sum(c == "A" for c in batch.context_ids) == 16
+    assert sum(c == "B" for c in batch.context_ids) == 4
+
+    assert np.isclose(
+        buf.last_sample_stats["historical_relevant_fraction"],
+        0.80,
+    )
+
+    assert np.isclose(
+        buf.last_sample_stats["recent_fraction"],
+        0.20,
+    )
+
+    assert np.isclose(
+        buf.last_sample_stats["current_context_fraction"],
+        0.80,
+    )
