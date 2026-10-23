@@ -1,0 +1,7 @@
+split,behavior,context,n_windows
+train,random,A,2160
+train,random,B,2160
+train,policy_A,A,1080
+train,policy_A,B,1053
+train,policy_B,A,842
+train,policy_B,B,1080
