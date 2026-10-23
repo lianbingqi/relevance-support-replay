@@ -1,0 +1,37 @@
+environment:
+  rho: 0.85
+  beta: 0.12
+  noise_std: 0.01
+  init_position_range: 1.0
+  init_velocity_range: 0.10
+  max_episode_steps: 200
+  safety_radius: 25.0
+  safety_speed: 10.0
+
+contexts:
+  A: {rotation_deg: 0.0}
+  B: {rotation_deg: 90.0}
+  D: {rotation_deg: 180.0}
+
+trajectory:
+  seed: 1
+  A1_steps: 20000
+  B_steps: 20000
+  A2_steps: 2000
+  replay_capacity: 100000
+  recent_window: 5000
+
+comparison:
+  history_length: 8
+  bank_stride: 4
+  query_stride: 4
+  max_bank_windows_per_context: 4000
+  top_k_primary: 10
+  top_k_secondary: 50
+  early_query_max_step: 512
+  encoder_05b_config: configs/synthetic_v2/dynamics_isolated_retrieval_pilot.yaml
+  encoder_05c_config: configs/synthetic_v2/behavior_diverse_retrieval_pilot.yaml
+
+criteria:
+  min_early_precision_at_10: 0.90
+  min_first2k_precision_at_10: 0.90
