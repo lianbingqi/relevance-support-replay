@@ -1,0 +1,39 @@
+environment:
+  rho: 0.85
+  beta: 0.12
+  noise_std: 0.01
+  init_position_range: 1.0
+  init_velocity_range: 0.10
+  max_episode_steps: 200
+  safety_radius: 25.0
+  safety_speed: 10.0
+
+contexts:
+  A: {rotation_deg: 0.0}
+  B: {rotation_deg: 90.0}
+  D: {rotation_deg: 180.0}
+
+isolation:
+  seed: 1
+  A1_steps: 20000
+  B_steps: 20000
+  A2_steps: 10000
+
+  replay_capacity: 100000
+  recent_window: 5000
+  oracle_historical_fraction: 0.80
+
+  eval_episodes: 5
+  A1_reference_steps: [16000, 18000, 20000]
+  A2_eval_steps:
+    [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000,
+     1250, 1500, 1750, 2000, 3000, 4000, 6000, 8000, 10000]
+
+  recovery_threshold: 0.90
+  recovery_consecutive_checkpoints: 2
+  auc_window_steps: 2000
+  random_baseline_episodes: 50
+
+screen:
+  min_recovery_improvement_steps: 250
+  min_auc_advantage: 0.10
