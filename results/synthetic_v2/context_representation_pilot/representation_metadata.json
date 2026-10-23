@@ -1,0 +1,27 @@
+{
+  "code_commit": "2916cdd57e82adc10018683288f06ba26670f07b",
+  "seed": 1,
+  "train_contexts": [
+    "A",
+    "B"
+  ],
+  "unseen_diagnostic_context": "D",
+  "label_used_in_training": false,
+  "history_length": 8,
+  "history_model_best_epoch": 36,
+  "baseline_best_epoch": 8,
+  "criteria": {
+    "min_relative_mse_improvement": 0.2,
+    "min_centroid_accuracy": 0.9,
+    "min_retrieval_precision_at_k": 0.9
+  },
+  "relative_mse_improvement": 0.9597352505443872,
+  "centroid_accuracy": 1.0,
+  "retrieval_precision_at_10": 1.0,
+  "mse_pass": true,
+  "centroid_pass": true,
+  "retrieval_pass": true,
+  "representation_pilot_pass": true,
+  "next_if_pass": "learned relevance retrieval pilot using latent cosine similarity",
+  "next_if_fail": "diagnose representation objective/history before replay integration"
+}

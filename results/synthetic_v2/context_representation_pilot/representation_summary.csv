@@ -1,0 +1,2 @@
+history_test_mse,no_history_test_mse,relative_mse_improvement,centroid_accuracy,retrieval_precision_at_10,AB_nearest_centroid_similarity_mean,D_nearest_AB_centroid_similarity_mean,mse_pass,centroid_pass,retrieval_pass,pilot_pass
+0.00012325037096161395,0.0030609993264079094,0.9597352505443872,1.0,1.0,0.9793646931648254,0.9860103130340576,True,True,True,True

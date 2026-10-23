@@ -1,0 +1,4 @@
+context,n_windows,nearest_centroid_similarity_mean
+A,540,0.9640436172485352
+B,540,0.9946856498718262
+D_unseen,540,0.9860103130340576
