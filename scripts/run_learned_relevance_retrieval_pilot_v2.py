@@ -392,6 +392,13 @@ def run_phase(
 
             episode_id += 1
 
+            # This completed episode has already been logged. Always
+            # clear its buffers immediately, including when the phase
+            # itself ends on this transition. Otherwise the post-loop
+            # partial-episode flush logs it a second time.
+            episode_states = []
+            episode_actions = []
+
             if phase_step < phase_steps:
                 state, info = env.reset(
                     seed=(
@@ -410,8 +417,6 @@ def run_phase(
                         dtype=np.float32,
                     )
                 ]
-
-                episode_actions = []
 
                 episode_start = phase_step
 
