@@ -1,0 +1,19 @@
+{
+  "code_commit": "316748f38c61504729710f542c727c806d3f37b1",
+  "seed": 1,
+  "n_transitions": 42000,
+  "phase_transition_counts": {
+    "A1": 20000,
+    "B": 20000,
+    "A2": 2000
+  },
+  "phase_episode_counts": {
+    "A1": 100,
+    "B": 110,
+    "A2": 14
+  },
+  "repeat_generation_verified_exact": true,
+  "array_bundle_sha256": "9837617ddc5a206edcd1f0c709d496e9c1de100987e5df343aec170c47d7c2b4",
+  "npz_sha256": "96b07fab6dbed7f4217fc13046846c6543d840d9026d28c1daba42567ca9e1bf",
+  "purpose": "immutable corrected evaluation trajectory for frozen 05b vs 05c comparison"
+}
