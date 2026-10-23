@@ -1,0 +1,2 @@
+n_bank_windows,bank_A_fraction,n_A2_queries,early_A2_precision_at_10,first2k_precision_at_10,first2k_precision_at_50,early_same_vs_other_margin,early_pass,first2k_pass,pilot_pass
+8000,0.5,488,0.3895999789237976,0.7045081853866577,0.6961885094642639,0.015171801671385765,False,False,False
