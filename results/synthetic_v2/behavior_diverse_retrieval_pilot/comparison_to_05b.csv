@@ -1,0 +1,3 @@
+encoder_training_distribution,history_feature,early_A2_precision_at_10,first2k_precision_at_10,first2k_precision_at_50
+random_only,action_delta_only,0.4487999975681305,0.7588115334510803,0.7400000095367432
+random_plus_policyA_plus_policyB,action_delta_only,0.8056451678276062,0.9502065777778625,0.951280951499939
