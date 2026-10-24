@@ -1,0 +1,19 @@
+{
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+  "numpy": "2.1.3",
+  "torch": "2.11.0+cpu",
+  "gymnasium": "1.4.0",
+  "torch_num_threads": 1,
+  "torch_num_interop_threads": 1,
+  "torch_deterministic_algorithms_enabled": false,
+  "cuda_available": false,
+  "code_commit": "b513df347ed99e6e518057278a2422bee795e0f8",
+  "mode": "sequential",
+  "label": "sequential_a",
+  "seeds": [
+    2,
+    3
+  ],
+  "oracle_config": "configs/synthetic_v2/oracle_recovery_3seed.yaml"
+}
