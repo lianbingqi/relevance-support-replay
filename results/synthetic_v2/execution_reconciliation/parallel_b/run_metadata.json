@@ -1,0 +1,18 @@
+{
+  "per_seed": [
+    {
+      "seed": 2,
+      "A1_reference_return": -4.444483148143124,
+      "B_final_return": -9.1556404955093,
+      "random_A": -11185.052693682977,
+      "fork_zero_shot_return": -7426.610008437836
+    },
+    {
+      "seed": 3,
+      "A1_reference_return": -9.097395191986166,
+      "B_final_return": -6.854029867605671,
+      "random_A": -9413.666703688155,
+      "fork_zero_shot_return": -18033.341691585894
+    }
+  ]
+}

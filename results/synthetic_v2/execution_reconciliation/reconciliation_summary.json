@@ -1,0 +1,9 @@
+{
+  "comparison_atol": 1e-12,
+  "sequential_reproducible": true,
+  "parallel_reproducible": true,
+  "sequential_parallel_same": true,
+  "diagnosis": "NO_CURRENT_EXECUTION_PATH_EFFECT",
+  "recommendation": "USE_CURRENT_SEQUENTIAL_RUNTIME_AS_CANONICAL_AND_RECORD_VERSION_MANIFEST",
+  "rq2_results_modified": false
+}
