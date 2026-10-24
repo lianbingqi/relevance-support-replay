@@ -1,0 +1,2 @@
+n_bank_windows,bank_A_fraction_diagnostic_only,history_length,bank_stride,retrieval_top_k_windows
+8000,0.498875,8,4,50

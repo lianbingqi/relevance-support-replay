@@ -1,0 +1,20 @@
+{
+  "code_commit": "228603b35d2cab05f21268a89cc932b9fc4cafb7",
+  "development_seed": 1,
+  "heldout_replication_seeds": [
+    2,
+    3
+  ],
+  "seed1_result_reused_without_rerun": true,
+  "heldout_runs_call_exact_seed1_pilot_script": true,
+  "only_config_change_per_heldout_run": "isolation.seed",
+  "pilot_config_sha256": "bae3c9c7b95a135a6d5f71d6da112176b5dd5cf6e536914a672099780aaeac17",
+  "pilot_script_sha256": "16cad41244cd8970567e1b8860abac52f8d02e8407473e5fd2eac66438e49909",
+  "no_hyperparameter_tuning_between_seeds": true,
+  "learned_selector_uses_true_context_labels": false,
+  "heldout_positive_learned_recovery_seeds": 2,
+  "heldout_positive_learned_AUC_seeds": 2,
+  "all3_positive_learned_recovery_seeds": 3,
+  "all3_positive_learned_AUC_seeds": 3,
+  "n_significance_tests": 0
+}

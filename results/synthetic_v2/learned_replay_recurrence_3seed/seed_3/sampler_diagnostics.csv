@@ -1,0 +1,4 @@
+method,mean_oracle_historical_fraction,mean_oracle_recent_fraction,learned_query_available_update_fraction,mean_learned_historical_fraction,mean_learned_recent_fraction,mean_learned_historical_A_fraction_diagnostic,mean_learned_top50_A_window_fraction_diagnostic,mean_learned_best_similarity,mean_learned_candidate_historical_transitions
+recent,,,,,,,,,
+learned,,,0.9592,0.7643625,0.2356375,0.9410374658620747,0.9408423686405337,0.9992492034397491,378.5728
+oracle,0.796875,0.203125,,,,,,,

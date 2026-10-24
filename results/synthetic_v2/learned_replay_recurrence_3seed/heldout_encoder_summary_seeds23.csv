@@ -1,0 +1,3 @@
+seed,offline_history_test_mse,offline_no_history_test_mse,offline_relative_mse_improvement,offline_AB_precision_at_10,offline_AB_centroid_accuracy,encoder_best_epoch
+2,0.0001451777206966,0.0015741536626592,0.9077741111681462,0.95,0.959448499594485,26
+3,0.0001451777206966,0.0015741536626592,0.9077741111681462,0.95,0.959448499594485,26
