@@ -1,0 +1,6 @@
+replication:
+  development_seed: 1
+  heldout_seeds: [2, 3]
+  pilot_config: configs/synthetic_v2/learned_replay_recurrence_pilot.yaml
+  pilot_script: scripts/run_learned_replay_recurrence_pilot_v2.py
+  no_significance_tests: true

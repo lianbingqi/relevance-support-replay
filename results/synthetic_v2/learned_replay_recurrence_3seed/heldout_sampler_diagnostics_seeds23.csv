@@ -1,0 +1,7 @@
+seed,method,mean_oracle_historical_fraction,mean_oracle_recent_fraction,learned_query_available_update_fraction,mean_learned_historical_fraction,mean_learned_recent_fraction,mean_learned_historical_A_fraction_diagnostic,mean_learned_top50_A_window_fraction_diagnostic,mean_learned_best_similarity,mean_learned_candidate_historical_transitions
+2,recent,,,,,,,,,
+2,learned,,,0.9592,0.7643625,0.2356375,0.9055258467023172,0.9051959966638864,0.9986208757328132,378.2336
+2,oracle,0.796875,0.203125,,,,,,,
+3,recent,,,,,,,,,
+3,learned,,,0.9592,0.7643625,0.2356375,0.9410374658620748,0.9408423686405336,0.9992492034397492,378.5728
+3,oracle,0.796875,0.203125,,,,,,,

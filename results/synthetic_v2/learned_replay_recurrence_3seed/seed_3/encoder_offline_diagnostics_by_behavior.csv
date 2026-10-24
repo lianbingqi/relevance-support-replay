@@ -1,0 +1,4 @@
+behavior,n_test_windows,precision_at_10,centroid_accuracy
+random,1080,1.0,1.0
+policy_A,698,0.8968481375358166,0.994269340974212
+policy_B,688,0.9254360465116279,0.8604651162790697

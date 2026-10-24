@@ -1,0 +1,114 @@
+project:
+  name: relevance-support-replay
+agent:
+  algorithm: ddqn
+  gamma: 0.99
+  learning_rate: 0.0003
+  batch_size: 64
+  target_update_steps: 1000
+  hidden_sizes:
+  - 128
+  - 128
+  grad_clip_norm: 10.0
+replay:
+  type: uniform
+  capacity: 50000
+experiment:
+  episodes: 300
+  learning_starts: 1000
+  train_frequency: 4
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 20000
+  eval_episodes: 30
+  seeds:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+environment:
+  rho: 0.85
+  beta: 0.12
+  noise_std: 0.01
+  init_position_range: 1.0
+  init_velocity_range: 0.1
+  max_episode_steps: 200
+  safety_radius: 25.0
+  safety_speed: 10.0
+contexts:
+  A:
+    rotation_deg: 0.0
+  B:
+    rotation_deg: 90.0
+  D:
+    rotation_deg: 180.0
+representation:
+  seed: 1
+  history_length: 8
+  collection_steps_per_episode: 80
+  train_episodes_per_context: 60
+  val_episodes_per_context: 15
+  test_episodes_per_context: 15
+  sample_stride: 2
+  gru_hidden_dim: 32
+  latent_dim: 16
+  predictor_hidden_dim: 64
+  batch_size: 256
+  max_epochs: 50
+  patience: 6
+  learning_rate: 0.001
+  weight_decay: 1.0e-05
+behavior_diverse:
+  policy_train_steps: 20000
+  policy_A_seed: 11
+  policy_B_seed: 12
+  ddqn_train_episodes_per_behavior_context: 30
+  ddqn_val_episodes_per_behavior_context: 10
+  ddqn_test_episodes_per_behavior_context: 10
+  rollout_steps_per_episode: 80
+isolation:
+  seed: 3
+  A1_steps: 20000
+  B_steps: 20000
+  A2_steps: 10000
+  replay_capacity: 100000
+  recent_window: 5000
+  oracle_historical_fraction: 0.8
+  learned_historical_fraction: 0.8
+  history_bank_stride: 4
+  max_history_bank_windows: 8000
+  learned_retrieval_top_k_windows: 50
+  eval_episodes: 5
+  A1_reference_steps:
+  - 16000
+  - 18000
+  - 20000
+  A2_eval_steps:
+  - 0
+  - 100
+  - 200
+  - 300
+  - 400
+  - 500
+  - 600
+  - 700
+  - 800
+  - 900
+  - 1000
+  - 1250
+  - 1500
+  - 1750
+  - 2000
+  - 3000
+  - 4000
+  - 6000
+  - 8000
+  - 10000
+  recovery_threshold: 0.9
+  recovery_consecutive_checkpoints: 2
+  auc_window_steps: 2000
+  random_baseline_episodes: 50
+screen:
+  min_learned_recovery_improvement_steps: 250
+  min_learned_auc_advantage: 0.1

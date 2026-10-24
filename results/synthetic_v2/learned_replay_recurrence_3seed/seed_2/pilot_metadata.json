@@ -1,0 +1,36 @@
+{
+  "code_commit": "228603b35d2cab05f21268a89cc932b9fc4cafb7",
+  "seed": 2,
+  "A1_reference_return": -4.444483148143124,
+  "B_final_return": -9.1556404955093,
+  "random_A": -11185.052693682977,
+  "fork_zero_shot_returns": {
+    "recent": -7426.610008437836,
+    "oracle": -7426.610008437836,
+    "learned": -7426.610008437836
+  },
+  "oracle_control_protocol_matches_prior_config": true,
+  "historical_metric_equality_required": false,
+  "encoder_sanity": {
+    "relative_mse_improvement_ge_0_20": true,
+    "offline_AB_precision_at_10_ge_0_90": true,
+    "offline_AB_centroid_accuracy_ge_0_90": true
+  },
+  "05d_early_retrieval_formal_pass": false,
+  "05d_early_retrieval_precision_at_10": 0.8064516186714172,
+  "05d_first2k_retrieval_precision_at_10": 0.9504132270812988,
+  "learned_selector_uses_true_context_labels": false,
+  "bank_subsampling_uses_true_context_labels": false,
+  "historical_fraction_target": 0.8,
+  "retrieval_top_k_windows": 50,
+  "n_history_bank_windows": 8000,
+  "bank_A_fraction_diagnostic_only": 0.501625,
+  "learned_recovery_improvement_steps": 500.0,
+  "learned_AUC_0_2000_advantage": 0.31138305824816925,
+  "learned_vs_oracle_AUC_gap": 0.040465525912430356,
+  "recovery_screen_pass": true,
+  "auc_screen_pass": true,
+  "pilot_supports_3seed_expansion": true,
+  "next_if_supported": "run paired seeds 2 and 3 with this frozen Recent/Learned/Oracle fork-at-return protocol",
+  "next_if_not_supported": "do not tune the encoder to force a pass; record that 05c relevance is informative but insufficient for end-to-end recurrence utility and diagnose reuse mechanics"
+}
