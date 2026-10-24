@@ -1,0 +1,7 @@
+reconciliation:
+  oracle_config: configs/synthetic_v2/oracle_recovery_3seed.yaml
+  seeds: [2, 3]
+  max_workers: 2
+  historical_oracle_results: results/synthetic_v2/oracle_recovery_3seed/heldout_metrics_seeds23.csv
+  current_07_results: results/synthetic_v2/learned_replay_recurrence_3seed/heldout_metrics_seeds23.csv
+  comparison_atol: 1.0e-12
