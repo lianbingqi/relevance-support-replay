@@ -1,0 +1,7 @@
+seed,schedule,n_methods,zero_shot_spread,atol,pass
+1,ABA,4,0.0,1e-10,True
+1,ABD,4,0.0,1e-10,True
+2,ABA,4,0.0,1e-10,True
+2,ABD,4,0.0,1e-10,True
+3,ABA,4,0.0,1e-10,True
+3,ABD,4,0.0,1e-10,True
