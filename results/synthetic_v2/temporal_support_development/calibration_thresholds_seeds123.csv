@@ -1,0 +1,4 @@
+seed,single_support_threshold,single_support_quantile,temporal_support_threshold,temporal_support_quantile,temporal_score_window_updates,n_one_step_calibration_queries,n_temporal_calibration_windows
+1,0.08270826712250703,0.95,0.08066813144832845,0.95,8,2460,743
+2,0.08965478800237178,0.95,0.08463569782179547,0.95,8,2460,743
+3,0.07857456579804417,0.95,0.07395063142757859,0.95,8,2460,743

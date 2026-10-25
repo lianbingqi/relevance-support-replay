@@ -1,0 +1,30 @@
+{
+  "code_commit": "4fdaf003f096bff5a22d727317796ee7aef11f97",
+  "development_seeds": [
+    1,
+    2,
+    3
+  ],
+  "reserved_confirmation_seeds_not_run": [
+    4,
+    5,
+    6
+  ],
+  "rq3c_primary_confirmation_passed": false,
+  "rq3d_target": "historical reuse support, not novelty detection",
+  "new_method": "mean of last 8 one-step-ahead retrieved_mean_mse scores",
+  "temporal_window_tuned": false,
+  "temporal_window_equals_history_length": true,
+  "D_used_for_threshold_calibration": false,
+  "true_context_labels_used_for_threshold_calibration": false,
+  "threshold_quantile": 0.95,
+  "development_success_rule": "all six seed-by-schedule window regrets <=0.10 and both mean and worst-case regret improve over single-step support",
+  "all_six_window_regret_le_0p10": false,
+  "mean_window_regret_lower_than_single": false,
+  "worst_window_regret_lower_than_single": false,
+  "mean_window_regret": 0.04198398870168965,
+  "mean_single_regret": 0.027948846465708718,
+  "worst_window_regret": 0.28856654723507413,
+  "worst_single_regret": 0.16534182397250713,
+  "eligible_to_freeze_for_seeds_4_5_6": false
+}
