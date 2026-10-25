@@ -1,0 +1,3 @@
+seed,support_score,support_threshold,support_quantile,ood_score,ood_threshold,ood_quantile,n_calibration_queries
+2,retrieved_mean_mse,0.09941399469971657,0.95,self_prediction_mse,0.045493049547076225,0.95,2466
+3,retrieved_mean_mse,0.0912277027964592,0.95,self_prediction_mse,0.045493049547076225,0.95,2466
