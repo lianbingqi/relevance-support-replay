@@ -1,0 +1,7 @@
+seed,architecture,A_reference,A1_episodes,B_episodes,n_A1_B_transitions,latent_dim,q_parameter_count,unavailable_history_mask_value
+1,state_only,-21.77958670801307,101,114,40000,16,17797,0.0
+1,history_conditioned,-6.5796117597449575,101,101,40000,16,19973,0.0
+2,state_only,-4.5871029410998805,100,104,40000,16,17797,0.0
+2,history_conditioned,-10.112314516594997,100,111,40000,16,19973,0.0
+3,state_only,-9.511819215328645,101,101,40000,16,17797,0.0
+3,history_conditioned,-9.319327286079407,101,101,40000,16,19973,0.0
