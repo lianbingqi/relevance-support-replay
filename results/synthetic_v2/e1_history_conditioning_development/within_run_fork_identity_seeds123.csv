@@ -1,0 +1,13 @@
+seed,architecture,schedule,n_methods,zero_shot_spread,pass
+1,state_only,ABA,3,0.0,True
+1,state_only,ABD,3,0.0,True
+1,history_conditioned,ABA,3,0.0,True
+1,history_conditioned,ABD,3,0.0,True
+2,state_only,ABA,3,0.0,True
+2,state_only,ABD,3,0.0,True
+2,history_conditioned,ABA,3,0.0,True
+2,history_conditioned,ABD,3,0.0,True
+3,state_only,ABA,3,0.0,True
+3,state_only,ABD,3,0.0,True
+3,history_conditioned,ABA,3,0.0,True
+3,history_conditioned,ABD,3,0.0,True

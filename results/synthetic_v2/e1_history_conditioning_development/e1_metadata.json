@@ -1,0 +1,40 @@
+{
+  "experiment": "E1 diagnostic architecture x replay factorial",
+  "code_commit": "b99f163bd54b7e9764c85ba8e9460cad89f5a45f",
+  "development_seeds": [
+    1,
+    2,
+    3
+  ],
+  "reserved_confirmation_seeds_not_run": [
+    4,
+    5,
+    6
+  ],
+  "RQ3c_formal_passed": false,
+  "RQ3d_development_passed": false,
+  "encoder": "frozen_05c",
+  "frozen_latent_input": "z_before,z_after plus availability mask",
+  "historical_latents": "transition-time episode-local cached",
+  "Q_architectures": [
+    "state_only",
+    "history_conditioned"
+  ],
+  "replay_methods": [
+    "recent",
+    "relevance",
+    "single_support"
+  ],
+  "A_D_normalization": "same state-only reference for both architectures per seed",
+  "context_labels_in_learner_or_gate": false,
+  "primary_endpoint": "normalized AUC first 2000 steps",
+  "analysis_status": "development / mechanism diagnosis, NOT confirmatory",
+  "runtime": {
+    "python": "3.13.16",
+    "numpy": "2.1.3",
+    "torch": "2.11.0+cpu",
+    "gymnasium": "1.4.0",
+    "torch_threads": 1,
+    "cuda": false
+  }
+}

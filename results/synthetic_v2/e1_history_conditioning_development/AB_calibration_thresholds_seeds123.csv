@@ -1,0 +1,7 @@
+seed,architecture,single_support_threshold,bank_n_windows,bank_A_fraction_diagnostic
+1,state_only,0.0814732018858194,8000,0.50375
+1,history_conditioned,0.09889687746763229,8000,0.49875
+2,state_only,0.08732535429298872,8000,0.504625
+2,history_conditioned,0.09889360368251798,8000,0.498875
+3,state_only,0.08202616944909083,8000,0.499375
+3,history_conditioned,0.09579170346260069,8000,0.50225
