@@ -1,0 +1,2 @@
+support_threshold,support_knn_k,support_calibration_quantile,n_A_queries,n_D_queries,A_support_rate,D_support_rate,A_support_distance_mean,D_support_distance_mean,A_vs_D_anomaly_AUROC,A_best_cosine_mean,D_best_cosine_mean,A_mean_top50_cosine,D_mean_top50_cosine,D_top50_A_fraction_diagnostic,D_top50_B_fraction_diagnostic
+0.7992899083532979,20,0.95,490,454,0.04897959183673469,0.20484581497797358,1.4947935235282228,2.0119176742354914,0.6596197069136024,0.9849668067328784,0.9185664736489367,0.9510323147384487,0.8973457272357352,0.0,1.0

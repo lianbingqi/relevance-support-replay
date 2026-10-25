@@ -1,0 +1,2 @@
+offline_history_test_mse,offline_no_history_test_mse,offline_relative_mse_improvement,offline_AB_precision_at_10,offline_AB_centroid_accuracy,encoder_best_epoch
+0.00014104101865086704,0.0016417838633060455,0.9140928219583947,0.9824796747967479,0.9939024390243902,38
