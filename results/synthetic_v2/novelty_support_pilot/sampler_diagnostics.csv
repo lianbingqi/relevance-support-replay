@@ -1,0 +1,3 @@
+method,learned_query_available_update_fraction,mean_learned_historical_fraction,mean_learned_recent_fraction,mean_learned_historical_A_fraction_diagnostic,mean_learned_historical_B_fraction_diagnostic,mean_learned_top50_A_window_fraction_diagnostic,mean_learned_top50_B_window_fraction_diagnostic,mean_learned_best_similarity
+recent,,,,,,,,
+learned,0.9472,0.7548,0.2452,0.0008859962904080551,0.999114003709592,0.0008108108108108109,0.9991891891891892,0.9703453720824139
