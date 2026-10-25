@@ -768,6 +768,9 @@ def train_behavior_diverse_encoder(
     return {
         "model": model,
         "history_std": history_std,
+        "current_std": current_std,
+        "target_std": target_std,
+        "heldout_test": test,
         "history_curve": history_curve,
         "model_meta": model_meta,
         "history_mse": history_mse,
