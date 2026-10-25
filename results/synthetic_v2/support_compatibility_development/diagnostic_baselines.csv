@@ -1,0 +1,4 @@
+baseline,A_vs_D_anomaly_AUROC
+09_whitened_knn_density,0.6596197069136024
+absolute_best_cosine,0.6580014384608469
+self_prediction_mse,0.9971739536621823

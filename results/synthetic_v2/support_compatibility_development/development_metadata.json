@@ -1,0 +1,26 @@
+{
+  "code_commit": "216b737b8a175187218d036c9477177f3d5050c6",
+  "seed": 1,
+  "seed_role": "development_only",
+  "heldout_confirmation_seeds": [
+    2,
+    3
+  ],
+  "true_context_labels_used_for_threshold_calibration": false,
+  "D_used_for_threshold_calibration": false,
+  "D_used_for_candidate_selection": true,
+  "candidate_family_predeclared": [
+    "retrieved_member_mse",
+    "retrieved_mean_mse",
+    "excess_mse",
+    "log_ratio_mse"
+  ],
+  "calibration_source": "frozen 05c held-out behavior-diverse A/B test queries",
+  "calibration_quantile": 0.95,
+  "retrieval_top_k_windows": 50,
+  "selected_method": "retrieved_mean_mse",
+  "selection_success": true,
+  "selection_rule": "eligible iff A support >=0.70, D support <=0.30, A-vs-D AUROC >=0.80; highest AUROC then lower D support then higher A support",
+  "next_if_selected": "freeze selected score and threshold rule, implement support-aware replay, then evaluate only held-out seeds 2/3 under ABA and ABD",
+  "next_if_none_selected": "do not touch held-out seeds 2/3; reconsider support formulation"
+}
