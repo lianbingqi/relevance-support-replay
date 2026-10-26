@@ -1,0 +1,5 @@
+seed,arm,context,margin_drift,noop_fraction_drift
+2,state_only,A,-1.7763568394002505e-15,0.0
+2,state_only,B,0.0,0.0
+2,hc_full_05c,A,0.0,0.0
+2,hc_full_05c,B,0.0,0.0
