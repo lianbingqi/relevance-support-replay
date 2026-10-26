@@ -1,0 +1,38 @@
+{
+  "experiment": "E1d v2.16 on-policy Q / frozen-latent ablation development",
+  "source_commit": "929f7ff7ee0c6ce070ac33956909a4e3769c7871",
+  "development_seeds": [
+    1,
+    2,
+    3
+  ],
+  "reserved_seeds_not_run": [
+    4,
+    5,
+    6
+  ],
+  "arms": [
+    "state_only",
+    "hc_full_05c",
+    "hc_zero_latent"
+  ],
+  "latent_ablation": "zero 05c coordinates, preserve availability bit and 21-dimensional DDQN architecture",
+  "frozen_representation": "05c; trained only on A/B behavior-diverse data",
+  "common_phases": "A1 20000 then B 20000, unchanged E1 train code and recent replay",
+  "primary_diagnostics": [
+    "policy-state Q margin vs same-seed fixed Q",
+    "B-end raw advantage over No-op",
+    "greedy No-op fraction"
+  ],
+  "mechanism_interpretation": "descriptive, no isolated proof of causality; zero-latent arms change learning trajectories",
+  "E1b_reference_reproduction": true,
+  "E1c_fixed_Q_reference_reproduction": true,
+  "runtime": {
+    "python": "3.13.16",
+    "numpy": "2.1.3",
+    "torch": "2.11.0+cpu",
+    "gymnasium": "1.4.0",
+    "cuda": false,
+    "threads": 1
+  }
+}

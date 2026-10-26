@@ -1,0 +1,4 @@
+seed,context,full_advantage_vs_noop,zero_advantage_vs_noop,zero_minus_full_advantage,full_noop_fraction,zero_noop_fraction,zero_minus_full_noop_fraction
+1,B,0.0,217.67781369688268,217.67781369688268,1.0,0.596,-0.404
+2,B,0.0,291.0665946576386,291.0665946576386,1.0,0.198,-0.802
+3,B,11.09221769906327,229.59767406828195,218.50545636921868,0.997,0.409,-0.5880000000000001
