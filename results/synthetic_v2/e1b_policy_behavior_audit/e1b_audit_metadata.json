@@ -1,0 +1,32 @@
+{
+  "experiment": "E1b no-training-change policy behavior audit",
+  "code_commit": "83c929aa722b14fafb438bb407197e0e05313a16",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "reserved_seeds_not_run": [
+    4,
+    5,
+    6
+  ],
+  "legacy_e1_script_unchanged": true,
+  "e1b_intervention": "instrument existing greedy evaluations only; post-B probe uses deep-copied agent",
+  "primary_diagnostics": [
+    "action frequencies",
+    "exact-seed noop baseline",
+    "distance to target",
+    "raw return",
+    "control progress from noop"
+  ],
+  "cross_runtime_drift_diagnostic_only": true,
+  "evaluation_return_alignment_verified": true,
+  "runtime": {
+    "python": "3.13.16",
+    "numpy": "2.1.3",
+    "torch": "2.11.0+cpu",
+    "gymnasium": "1.4.0",
+    "cuda": false
+  }
+}
