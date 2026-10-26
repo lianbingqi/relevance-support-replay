@@ -210,7 +210,7 @@ def audited_adapt(*args, **kwargs):
     part = cfg["isolation"] if schedule == "ABA" else cfg["novelty"]
     keys = part["A2_eval_steps"] if schedule == "ABA" else part["D_eval_steps"]
     prior = ACTIVE_CONTEXT
-    ACTIVE_CONTEXT = _audit_phase("adaptation", schedule, bound["method"], [0, *keys])
+    ACTIVE_CONTEXT = _audit_phase("adaptation", schedule, bound["method"], sorted(set([0] + [int(k) for k in keys])))
     try:
         result = ORIGINAL_ADAPT(*args, **kwargs)
         if ACTIVE_CONTEXT["index"] != len(ACTIVE_CONTEXT["steps"]):

@@ -34,3 +34,11 @@ This diagnostic is 0 for No-op and 1 for the existing stationary control referen
 ## Repository policy
 
 Keep RQ3c/RQ3d negative results intact. Commit the script, tests, and this protocol in a separate **pre-run commit**, then commit new E1b diagnostic results. Never overwrite historical E1 files. Do not run seeds 4/5/6.
+
+## Pre-outcome implementation correction
+
+The initial E1b run stopped before completed results were saved.
+E1's evaluation schedule already includes phase step 0, which the
+E1b wrapper accidentally counted twice. The wrapper now
+deduplicates checkpoint indices. Training, replay, seeds,
+evaluation metrics and scientific criteria remain unchanged.

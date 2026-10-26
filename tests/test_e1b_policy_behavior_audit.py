@@ -76,3 +76,25 @@ def test_reserved_seeds_are_not_run():
     source = inspect.getsource(audit.main)
     assert "{1, 2, 3}" in source
     assert "reserved_confirmation_seeds" in source
+
+
+def test_adaptation_does_not_double_count_phase_zero(monkeypatch):
+    def fake_adapt(agent, replay, store, arch, rep, bank_z, bank_labels,
+                   method, schedule, seed, cfg, start_global, threshold, L):
+        for expected in [0, 100, 200]:
+            tag = audit.ACTIVE_CONTEXT
+            assert tag["steps"][tag["index"]] == expected
+            tag["index"] += 1
+        return "ok"
+
+    monkeypatch.setattr(audit, "ORIGINAL_ADAPT", fake_adapt)
+    cfg = {
+        "isolation": {"A2_eval_steps": [0, 100, 200]},
+        "novelty": {"D_eval_steps": [0, 100, 200]},
+    }
+    for schedule in ["ABA", "ABD"]:
+        result = audit.audited_adapt(
+            None, None, None, "state_only", None, None, None,
+            "recent", schedule, 1, cfg, 0, 0.1, 8
+        )
+        assert result == "ok"
