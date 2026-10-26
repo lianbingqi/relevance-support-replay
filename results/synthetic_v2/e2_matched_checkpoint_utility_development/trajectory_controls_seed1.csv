@@ -1,0 +1,3 @@
+seed,schedule,current_trajectory_steps,bank_windows,A_bank_fraction_diagnostic,common_B_return
+1,ABA,2000,8000,0.50375,-8.086828589552095
+1,ABD,2000,8000,0.50375,-8.086828589552095

@@ -1,0 +1,57 @@
+{
+  "experiment": "E2 v2.17 matched-checkpoint historical replay utility development",
+  "source_commit": "a01eed53f0ea59dfbe0dd4063efbc07edb708921",
+  "development_seeds": [
+    1,
+    2,
+    3
+  ],
+  "reserved_seeds_not_run": [
+    4,
+    5,
+    6
+  ],
+  "not_replay_gate": true,
+  "causal_estimand": "controlled effect of substituting 80% old samples for current-phase-only samples in 16 offline DDQN updates",
+  "not_legacy_recent": "Current-only excludes all pre-switch B transitions, unlike rolling Recent from RQ2/RQ3",
+  "design": {
+    "development_seeds": [
+      1,
+      2,
+      3
+    ],
+    "reserved_confirmation_seeds": [
+      4,
+      5,
+      6
+    ],
+    "schedules": [
+      "ABA",
+      "ABD"
+    ],
+    "checkpoint_steps": [
+      200,
+      500,
+      1000,
+      2000
+    ],
+    "branch_updates": 16,
+    "batch_replicates": 3,
+    "historical_fraction": 0.8,
+    "candidate_bank_windows": 50,
+    "compatibility_evidence_transitions": 16,
+    "recent_holdout_n": 32,
+    "q_grad_n": 64,
+    "mechanism_utility_epsilon": 5.0,
+    "reference_reproduction_tolerance": 1e-06,
+    "diagnostic_only": true
+  },
+  "runtime": {
+    "python": "3.13.16",
+    "numpy": "2.1.3",
+    "torch": "2.11.0+cpu",
+    "gymnasium": "1.4.0",
+    "cuda": false,
+    "threads": 1
+  }
+}
