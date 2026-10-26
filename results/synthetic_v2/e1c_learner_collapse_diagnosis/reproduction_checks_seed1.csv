@@ -1,0 +1,7 @@
+seed,architecture,phase,context,e1c_return,e1b_return,return_drift,e1c_noop_fraction,e1b_noop_fraction,noop_fraction_drift
+1,state_only,A1,A,-30.969379606382063,-30.969379606382063,0.0,0.461,0.461,0.0
+1,state_only,B,A,-9722.27356268941,-9722.27356268941,0.0,0.0,0.0,0.0
+1,state_only,B,B,-8.086828589552095,-8.086828589552095,0.0,0.645,0.645,0.0
+1,history_conditioned,A1,A,-7.794558116959148,-7.794558116959148,0.0,0.742,0.742,0.0
+1,history_conditioned,B,A,-250.2792565039468,-250.2792565039468,0.0,1.0,1.0,0.0
+1,history_conditioned,B,B,-225.6702019992822,-225.6702019992822,0.0,1.0,1.0,0.0
