@@ -1,0 +1,23 @@
+# Frozen development protocol for PER extension of the merged Uniform baseline.
+# No outcome-dependent tuning of alpha, beta, epsilon, evaluation or seeds.
+# All three methods share identical Recent-trained A1/B (20k+20k) checkpoints.
+references:
+  uniform_config: configs/synthetic_v2/uniform_nonstationary_postswitch_v2.yaml
+per_postswitch:
+  development_seeds: [1, 2, 3]
+  reserved_confirmation_seeds: [4, 5, 6]
+  schedules: [ABA, ABD]
+  methods: [recent, uniform, per]
+  pre_switch_replay: recent
+  post_switch_only: true
+  initial_priority: abs_td_error_at_fork
+  priority_sampling: proportional_with_replacement
+  new_transition_priority: current_max
+  importance_sampling: weighted_smooth_l1_loss
+  alpha: 0.6
+  beta_start: 0.4
+  beta_end: 1.0
+  beta_annealing: linear_post_switch
+  priority_epsilon: 0.000001
+  td_init_chunk_size: 2048
+  output_directory: results/synthetic_v2/per_nonstationary_postswitch_v2

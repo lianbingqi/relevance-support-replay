@@ -1,0 +1,7 @@
+seed,schedule,method,updates,sampled_A_fraction,sampled_B_fraction,sampled_current_fraction,sampling_pool,beta_first_update,beta_last_update,mean_importance_weight,priority_min,priority_mean,priority_max,total_sampling_mass
+3,ABA,recent,2500,0.7499,0.2501,0.7499,last_5000,,,,,,,
+3,ABA,uniform,2500,0.5532125,0.4467875,0.5532125,full_buffer,,,,,,,
+3,ABA,per,2500,0.6974625,0.3025375,0.6974625,full_buffer_priority_proportional_with_replacement,0.40006,0.99982,0.1860160719268024,4.337860107421875e-06,8.505768193676456,3825.984376,78298.70776920482
+3,ABD,recent,2500,0.0,0.2501,0.7499,last_5000,,,,,,,
+3,ABD,uniform,2500,0.44600625,0.4467875,0.10720625,full_buffer,,,,,,,
+3,ABD,per,2500,0.4524625,0.2086625,0.338875,full_buffer_priority_proportional_with_replacement,0.40006,0.99982,0.16876014134585857,4.337860107421875e-06,18.63861057899183,4346.5244150625,138482.4178392982

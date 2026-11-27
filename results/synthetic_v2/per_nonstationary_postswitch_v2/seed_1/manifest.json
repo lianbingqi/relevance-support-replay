@@ -1,0 +1,83 @@
+{
+  "experiment": "synthetic-v2-shared-checkpoint-postswitch-recent-uniform-per",
+  "seed": 1,
+  "development_only": true,
+  "reserved_confirmation_seeds_not_run": [
+    4,
+    5,
+    6
+  ],
+  "schedules": [
+    "ABA",
+    "ABD"
+  ],
+  "methods": [
+    "recent",
+    "uniform",
+    "per"
+  ],
+  "common_pre_switch_steps": 40000,
+  "post_switch_steps_per_branch": 10000,
+  "not_full_PER_from_step_zero": true,
+  "initial_priority": "absolute TD error from pre-switch frozen DDQN",
+  "per_settings": {
+    "development_seeds": [
+      1,
+      2,
+      3
+    ],
+    "reserved_confirmation_seeds": [
+      4,
+      5,
+      6
+    ],
+    "schedules": [
+      "ABA",
+      "ABD"
+    ],
+    "methods": [
+      "recent",
+      "uniform",
+      "per"
+    ],
+    "pre_switch_replay": "recent",
+    "post_switch_only": true,
+    "initial_priority": "abs_td_error_at_fork",
+    "priority_sampling": "proportional_with_replacement",
+    "new_transition_priority": "current_max",
+    "importance_sampling": "weighted_smooth_l1_loss",
+    "alpha": 0.6,
+    "beta_start": 0.4,
+    "beta_end": 1.0,
+    "beta_annealing": "linear_post_switch",
+    "priority_epsilon": 1e-06,
+    "td_init_chunk_size": 2048,
+    "output_directory": "results/synthetic_v2/per_nonstationary_postswitch_v2"
+  },
+  "source_commit": "632bdc6fc828b33e4f6d0c8b9cf6555013d5f761",
+  "source_config": "configs/synthetic_v2/per_nonstationary_postswitch_v2.yaml",
+  "script_sha256": "47c9e639efdc185496ac763842a61ea33cd62dde4a913f2e9b6e8f7e8cffc40e",
+  "config_sha256": "b1484883f56261bf0c7c69875733f748b74be584701ef2abbbfe09ff61bed0e6",
+  "per_module_sha256": "6636b3c15e83cf47bc82f45a19513270513a4c95a00287ac13f3d6017938085f",
+  "uniform_script_sha256": "d6ba0f61eefa7cc408f244b92c9e4f676af81c9e3459863e9746a9bd855afbc0",
+  "runtime": {
+    "python": "3.13.18",
+    "numpy": "2.4.6",
+    "torch": "2.14.1+cpu",
+    "gymnasium": "1.4.0",
+    "cuda_available": false,
+    "torch_num_threads": 1,
+    "device": "cpu"
+  },
+  "timestamp_utc": "2026-11-27T11:59:26.254352+00:00",
+  "reference_values": {
+    "A1_reference": -20.6227609643115,
+    "random_A": -8626.885351246803,
+    "stationary_D": -7.280598310504864,
+    "random_D": -8694.759568797825
+  },
+  "before_switch_returns": {
+    "A": -12886.536364787413,
+    "D": -11897.764134485933
+  }
+}
