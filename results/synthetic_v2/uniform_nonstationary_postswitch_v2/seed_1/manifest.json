@@ -1,0 +1,42 @@
+{
+  "experiment": "synthetic-v2-shared-checkpoint-postswitch-uniform-vs-recent",
+  "methodology": "identical Recent-trained A1/B checkpoint, fork Uniform and Recent at switch",
+  "not_full_uniform_from_step_zero": true,
+  "seed": 1,
+  "schedules": [
+    "ABA",
+    "ABD"
+  ],
+  "development_only": true,
+  "reserved_seeds_not_run": [
+    4,
+    5,
+    6
+  ],
+  "common_pre_switch_steps": 40000,
+  "post_switch_steps_per_branch": 10000,
+  "source_commit": "a01acd87416d4a62e9cae657385c3ba0cdbc032b",
+  "source_config": "configs/synthetic_v2/uniform_nonstationary_postswitch_v2.yaml",
+  "script_sha256": "d6ba0f61eefa7cc408f244b92c9e4f676af81c9e3459863e9746a9bd855afbc0",
+  "config_sha256": "0b9ba100a8cd74d5ed544d6a70d02adf967977fa1b2af979c86427b737be8422",
+  "runtime": {
+    "python": "3.13.18",
+    "torch": "2.14.1+cpu",
+    "numpy": "2.4.6",
+    "gymnasium": "1.4.0",
+    "cuda_available": false,
+    "torch_num_threads": 1,
+    "device": "cpu"
+  },
+  "timestamp_utc": "2026-11-27T08:27:26.215248+00:00",
+  "reference_values": {
+    "A1_reference": -20.6227609643115,
+    "random_A": -8626.885351246803,
+    "stationary_D": -7.280598310504864,
+    "random_D": -8694.759568797825
+  },
+  "before_switch_returns": {
+    "A": -12886.536364787413,
+    "D": -11897.764134485933
+  }
+}

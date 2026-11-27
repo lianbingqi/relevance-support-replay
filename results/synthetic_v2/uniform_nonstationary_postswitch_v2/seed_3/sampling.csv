@@ -1,0 +1,5 @@
+seed,schedule,method,updates,sampled_A_fraction,sampled_B_fraction,sampled_current_fraction,sampling_pool
+3,ABA,recent,2500,0.7499,0.2501,0.7499,last_5000
+3,ABA,uniform,2500,0.5532125,0.4467875,0.5532125,full_buffer
+3,ABD,recent,2500,0.0,0.2501,0.7499,last_5000
+3,ABD,uniform,2500,0.44600625,0.4467875,0.10720625,full_buffer

@@ -1,0 +1,19 @@
+# Development-only supplement to the synthetic-v2 RQ2/RQ3 baselines.
+# Frozen BEFORE running new Uniform outcomes.
+# This is a shared-checkpoint POST-SWITCH Uniform baseline, NOT an end-to-end
+# Uniform sampler from the initial A1 phase. All phase lengths, update rules,
+# evaluation reset seeds, and normalization definitions are inherited from
+# the referenced original experiment configs.
+references:
+  recurrence_config: configs/synthetic_v2/learned_replay_recurrence_pilot.yaml
+  novelty_config: configs/synthetic_v2/novelty_support_pilot.yaml
+uniform_postswitch:
+  development_seeds: [1, 2, 3]
+  reserved_confirmation_seeds: [4, 5, 6]
+  schedules: [ABA, ABD]
+  methods: [recent, uniform]
+  pre_switch_replay: recent
+  uniform_candidate_pool: all_buffer_transitions
+  recent_candidate_pool: last_5000_transitions
+  full_uniform_from_step_zero: false
+  output_directory: results/synthetic_v2/uniform_nonstationary_postswitch_v2

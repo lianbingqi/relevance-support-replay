@@ -1,0 +1,3 @@
+seed,schedule,fork_zero_return_recent,fork_zero_return_uniform,fork_initial_parameters_equal,fork_sampler_rng_equal
+1,ABA,-12886.536364787413,-12886.536364787413,True,True
+1,ABD,-11897.764134485933,-11897.764134485933,True,True
