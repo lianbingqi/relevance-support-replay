@@ -1,0 +1,13 @@
+seed,schedule,method,updates,sampled_A_fraction,sampled_B_fraction,sampled_current_fraction,sampling_pool
+1,ABA,recent,2500,0.74973125,0.25026875,0.74973125,last_5000
+1,ABA,uniform,2500,0.5549,0.4451,0.5549,full_buffer
+1,ABD,recent,2500,0.0,0.25026875,0.74973125,last_5000
+1,ABD,uniform,2500,0.44753125,0.4451,0.10736875,full_buffer
+2,ABA,recent,2500,0.74821875,0.25178125,0.74821875,last_5000
+2,ABA,uniform,2500,0.556075,0.443925,0.556075,full_buffer
+2,ABD,recent,2500,0.0,0.25178125,0.74821875,last_5000
+2,ABD,uniform,2500,0.4483375,0.443925,0.1077375,full_buffer
+3,ABA,recent,2500,0.7499,0.2501,0.7499,last_5000
+3,ABA,uniform,2500,0.5532125,0.4467875,0.5532125,full_buffer
+3,ABD,recent,2500,0.0,0.2501,0.7499,last_5000
+3,ABD,uniform,2500,0.44600625,0.4467875,0.10720625,full_buffer
